@@ -1,1 +1,29 @@
-<p>login works!</p>
+<div class="mt-5 mx-auto bg-body-tertiary border rounded-4" style="width: 325px;">
+    <div class="p-5">
+        <h1 class="text-center">Login</h1>
+        <form [formGroup]="formLogin">
+            <div class="mb-4">
+                <div class="mb-2">
+                    <label for="" class="">Correo</label>
+                </div>
+                <div>
+                    <input type="email" class="form-control" formControlName="email" placeholder="Correo">
+                </div>
+            </div>
+            <div class="mb-2">
+                <div class="mb-2">
+                    <label for="" class="">Password</label>
+                </div>
+                <div>
+                    <input type="password" class="form-control" formControlName="password" placeholder="Contraseña">
+                </div>
+            </div>
+            <div class="mb-4">
+                <a routerLink="/register">¿No estás registrado?</a>
+            </div>
+            <div class="text-center">
+                <button class="btn btn-primary" (click)="onSubmit()">Login</button>
+            </div>
+        </form>
+    </div>
+</div>
