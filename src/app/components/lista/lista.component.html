@@ -1,1 +1,23 @@
-<p>lista works!</p>
+<div class="m-3 container mx-auto">
+    <h1 class="text-center">Lista de productos</h1>
+    <div class="table-responsive m-1">
+        <table class="table table-bordered">
+            <thead>
+                <tr class="text-center">
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Direccion</th>
+                    <th scope="col">Ubicacion</th>
+                </tr>
+            </thead>
+            <tbody *ngFor="let user of lista">
+                <tr>
+                    <td>{{user.name}}</td>
+                    <td>{{user.email}}</td>
+                    <td>{{user.address.street}}, {{user.address.suite}}, {{user.address.city}}</td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

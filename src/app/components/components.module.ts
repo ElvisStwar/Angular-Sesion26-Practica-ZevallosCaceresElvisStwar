@@ -5,6 +5,7 @@ import { LoginComponent } from './login/login.component';
 import { ListaComponent } from './lista/lista.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 
 
@@ -18,7 +19,8 @@ import { RouterModule } from '@angular/router';
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterModule
+    RouterModule,
+    HttpClientModule,
   ],
   exports: [
     HeaderComponent,
