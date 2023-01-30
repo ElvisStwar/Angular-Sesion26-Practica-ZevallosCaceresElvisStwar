@@ -13,6 +13,7 @@ export class LoginComponent implements OnInit{
   formLogin!:FormGroup;
   datos:any;
   lista:any;
+  status!:boolean
 
   constructor( 
     private data:UserServiceService,
@@ -28,9 +29,11 @@ export class LoginComponent implements OnInit{
   }
 
   ngOnInit(): void {
-
       this.data.getAll().subscribe(data => console.log(data));
       this.data.getAll().subscribe(data => this.lista = data);
+      if(localStorage.getItem('status')=='logIn'){
+        this.status = true
+      }
   
   }
 
@@ -51,8 +54,7 @@ export class LoginComponent implements OnInit{
     if(localStorage.getItem('status')=="logIn"){
       this.router.navigate(['lista'])
     }
-
-
-
+    
   }
+
 }

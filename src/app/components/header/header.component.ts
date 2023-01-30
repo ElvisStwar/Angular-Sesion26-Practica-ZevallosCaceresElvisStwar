@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -7,6 +8,16 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
 
-  logOut(){}
+  constructor(private router:Router){}
+
+  logOut(){
+
+    if(localStorage.getItem('status')=='logIn'){
+      localStorage.setItem('status','logOut')
+      location.reload();
+      this.router.navigate(['login'])
+    }
+
+  }
 
 }
