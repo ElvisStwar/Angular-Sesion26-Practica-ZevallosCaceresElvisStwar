@@ -17,7 +17,7 @@
                     <td>{{user.name}}</td>
                     <td>{{user.email}}</td>
                     <td>{{user.address.street}}, {{user.address.suite}}, {{user.address.city}}</td>
-                    <td></td>
+                    <td class="text-center"><a class="btn btn-primary" href="https://maps.google.com/?q={{user.address.geo.lat}},{{user.address.geo.lng}}" target="_blank"><i class="bi bi-geo-alt-fill"></i></a></td>
                 </tr>
             </tbody>
         </table>

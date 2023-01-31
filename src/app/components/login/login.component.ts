@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup,FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserServiceService } from 'src/app/services/user-service.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -56,6 +57,13 @@ export class LoginComponent implements OnInit{
     
     if(localStorage.getItem('status')=="logIn"){
       this.router.navigate(['lista'])
+    }else{
+      Swal.fire({
+        title: 'Upss :c ...',
+        icon: 'error',
+        text: 'Username y/o password incorrectos',
+        confirmButtonText: 'ok',
+      })
     }
     
     console.log(this.lista.length)
