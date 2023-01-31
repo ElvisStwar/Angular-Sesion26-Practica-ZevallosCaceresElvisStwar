@@ -14,7 +14,7 @@ export class HeaderComponent {
 
     if(localStorage.getItem('status')=='logIn'){
       localStorage.setItem('status','logOut')
-      location.reload();
+      // location.reload();
       this.router.navigate(['login'])
     }
 

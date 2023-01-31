@@ -5,15 +5,15 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class PermisosGuard implements CanActivate {
+export class Permisos2Guard implements CanActivate {
   canActivate(): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
     
-    if(localStorage.getItem('status')=="logIn"){
-      return true
-    }else{
-      return false
-    }
-
+      if(localStorage.getItem('status')=="logIn"){
+        return false
+      }else{
+        return true
+      }
+  
   }
   
 }

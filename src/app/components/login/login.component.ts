@@ -42,19 +42,23 @@ export class LoginComponent implements OnInit{
 
   onSubmit(){
     this.datos = this.formLogin.value
-    // console.log(this.datos.username)
-    // console.log(this.datos.password)
-    // console.log(this.lista[1])
+    console.log(this.datos.username)
+    console.log(this.datos.password)
+    
+    for(let i = 0;i<this.lista.length;i++){
 
-    for(let i = 0;this.lista[i].username==this.datos.username&&this.lista[i].email==this.datos.password;i++){
-      console.log("logueado")
-      localStorage.setItem('status','logIn')
+      if(this.lista[i].username==this.datos.username&&this.lista[i].email==this.datos.password){
+        console.log("logueado")
+        localStorage.setItem('status','logIn')
+      }
+
     }
-
+    
     if(localStorage.getItem('status')=="logIn"){
       this.router.navigate(['lista'])
     }
     
+    console.log(this.lista.length)
   }
 
 }
